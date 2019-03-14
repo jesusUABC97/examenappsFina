@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Google Calendar API Quickstart</title>
+    <title>Sistema de citas UABC</title>
     <meta charset="utf-8" />
     <meta name="google-signin-client_id" content="113331073243-ap6ed5g51c2gt0qr2m2fa4bodf5hhnk8.apps.googleusercontent.com">
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
@@ -21,12 +21,13 @@
 
 <div class="box">
 <form action="#" th:action="@{/inicio}" th:object="${cita}" method="post">
-    <p>Nombre: <input type="text" th:field="*{nombre}" /></p>
-    <p>Asunto: <input type="text" th:field="*{asunto}" /></p>
-    <p>Dia: <input type="number" min="01" max="31" th:field="*{dia}" /></p>
-    <p>Mes: <input type="number" min="01" max="12" th:field="*{mes}" /></p>
-    <p>Año: <input type="number" min="1990" max="2020"th:field="*{anio}" /></p>
-    <p>Hora: <input type="time" th:field="*{hora}"  /></p>
+    <p>Nombre: <input required type="text" th:field="*{nombre}" /></p>
+    <p>Asunto: <input required type="text" th:field="*{asunto}" /></p>
+    <p>Dia: <input required type="number" min="01" max="31" th:field="*{dia}" /></p>
+    <p>Mes: <input required type="number" min="01" max="12" th:field="*{mes}" /></p>
+    <p>Año: <input required type="number" min="1990" max="2020"th:field="*{anio}" /></p>
+    <p>Hora: <input required type="time" th:field="*{hora}"  /></p>
+    <p>Doctor:
     <select th:field="*{dr}">
         <option value="Marco Martinez" text="Marco Martinez">Marco Martinez</option>
         <option value="Andrea Linares" text="Andrea Linares">Andrea Linares</option>
@@ -34,6 +35,7 @@
         <option value="Esteban Melendrez" text="Esteban Melendrez">Esteban Melendrez</option>
         <option value="Bandon Rivera" text="Bandon Rivera">Bandon Rivera</option>
     </select>
+    </p>
     <p><input type="submit" value="Aceptar" /></p>
 
 </form>
@@ -44,11 +46,6 @@
     <button class="w3-button w3-white w3-xlarge" onclick="w3_open()">☰ Mostrar calendario</button>
 </div>
 <!--Add buttons to initiate auth sequence and sign out-->
-
-
-
-<button onclick="execute()">execute</button>
-
 
 <script th:inline="javascript">
 
