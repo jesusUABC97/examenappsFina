@@ -20,6 +20,7 @@
 
 
 <div class="box">
+    <h3>Datos para la cita</h3>
 <form action="#" th:action="@{/inicio}" th:object="${cita}" method="post">
     <p>Nombre: <input required type="text" th:field="*{nombre}" /></p>
     <p>Asunto: <input required type="text" th:field="*{asunto}" /></p>
@@ -60,9 +61,6 @@
     var dia = /*[[${cita.dia}]]*/"Day";
     var hora = /*[[${cita.hora}]]*/"Time";
     var fecha = anio+ '-' + mes + '-' + dia + "T" + hora + ":00-07:00";
-
-
-
 
     /*]]>*/
 
